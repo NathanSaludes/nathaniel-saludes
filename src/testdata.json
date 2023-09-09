@@ -1,0 +1,139 @@
+[
+  {
+    "company_link": "https://www.linkedin.com/company/creativehope-ph-inc/",
+    "job_title": "Web Developer",
+    "_id": "61f0d367-261e-4f29-8c35-c93e12568a3e",
+    "_updatedAt": "2023-09-07T18:36:57Z",
+    "start_date": "2022-08-01",
+    "_createdAt": "2023-09-07T18:36:57Z",
+    "_rev": "krF135z8fM1SsbfPBtkQqN",
+    "_type": "experience",
+    "company": "CREATIVEHOPE PH, Inc."
+  },
+  {
+    "_createdAt": "2023-09-07T18:03:30Z",
+    "_type": "experience",
+    "_id": "bf51c057-c5de-4d17-9034-ef83a5bc7d6e",
+    "end_date": "2022-07-01",
+    "skills": ["ServiceNow", "HTML", "CSS", "JavaScript", "AngularJS"],
+    "job_description": [
+      {
+        "children": [
+          {
+            "_type": "span",
+            "marks": [],
+            "text": "Responsibilities include providing optimal solutions and configuring the ServiceNow platform according to business requirements.",
+            "_key": "f9b243c49d330"
+          }
+        ],
+        "level": 1,
+        "_type": "block",
+        "style": "normal",
+        "_key": "d85d0da36632",
+        "listItem": "bullet",
+        "markDefs": []
+      },
+      {
+        "_type": "block",
+        "style": "normal",
+        "_key": "5a10c7abc623",
+        "listItem": "bullet",
+        "markDefs": [],
+        "children": [
+          {
+            "text": "Create and manage automated system workflows, improve service portal experience, widget development, and more.",
+            "_key": "11c7116a03ed",
+            "_type": "span",
+            "marks": []
+          }
+        ],
+        "level": 1
+      },
+      {
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "marks": [],
+            "text": "Involved in AU and NZ projects, mainly focusing on implementing enterprise service management (ITSM and CSM).",
+            "_key": "22ff4f0904d8"
+          }
+        ],
+        "level": 1,
+        "_type": "block",
+        "style": "normal",
+        "_key": "31b9568baab2",
+        "listItem": "bullet"
+      }
+    ],
+    "company_link": "https://www2.deloitte.com/ph/en.html",
+    "_rev": "krF135z8fM1SsbfPBtk7Wd",
+    "company": "Deloitte",
+    "_updatedAt": "2023-09-07T18:30:53Z",
+    "job_title": "ServiceNow Analyst",
+    "start_date": "2021-05-01"
+  },
+  {
+    "company_link": "https://www2.deloitte.com/ph/en.html",
+    "_createdAt": "2023-09-07T18:19:18Z",
+    "_rev": "I69RE849GmtXmLZyCQMhlr",
+    "company": "Deloitte",
+    "_updatedAt": "2023-09-07T18:30:49Z",
+    "job_title": "Intern (ServiceNow)",
+    "end_date": "2021-04-01",
+    "skills": ["ServiceNow", "HTML", "CSS", "JavaScript"],
+    "start_date": "2020-05-01",
+    "_id": "e262cff8-4973-46be-8a90-58c70be533b6",
+    "job_description": [
+      {
+        "level": 1,
+        "_type": "block",
+        "style": "normal",
+        "_key": "5a0448a1fa90",
+        "listItem": "bullet",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "marks": [],
+            "text": "Went under training for some of the major products of the ServiceNow platform (ITSM, CSM, and HRSD).",
+            "_key": "1ab623177e670"
+          }
+        ]
+      },
+      {
+        "listItem": "bullet",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "marks": [],
+            "text": "Mainly performed management and creation of forms, platform notification configuration, and service portal customizations.",
+            "_key": "04a6721a1138"
+          }
+        ],
+        "level": 1,
+        "_type": "block",
+        "style": "normal",
+        "_key": "1801a742b58d"
+      },
+      {
+        "level": 1,
+        "_type": "block",
+        "style": "normal",
+        "_key": "657793f820b8",
+        "listItem": "bullet",
+        "markDefs": [],
+        "children": [
+          {
+            "marks": [],
+            "text": "Involved in AU based projects (Western Sydney University) which primarily focused on focused on designing, implementing and improving IT service management and customer service management.",
+            "_key": "8cc0644f3f7a",
+            "_type": "span"
+          }
+        ]
+      }
+    ],
+    "_type": "experience"
+  }
+]

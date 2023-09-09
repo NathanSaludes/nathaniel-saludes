@@ -6,6 +6,11 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+
+  --base-font-size: 15px;
+
+  --accent-background: #FFDD9B;
+  --accent-foreground: #D98F00;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -18,10 +23,8 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-size: var(--base-font-size);
+  line-height: 180%;
+  font-weight: 470;
+  letter-spacing: -0.2px;
 }
