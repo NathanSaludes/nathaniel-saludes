@@ -1,11 +1,11 @@
 "use client"
-import { Skill } from "@/types/skill-type"
+import { Skill } from "@/types"
 import { PortableText } from "@portabletext/react"
 import moment from "moment"
+import Image from "next/image"
 import React from "react"
 import { PortableTextBlock } from "sanity"
 import Pill from "../Pill"
-import Image from "next/image"
 
 export type JobDetails = {
   startDate: string

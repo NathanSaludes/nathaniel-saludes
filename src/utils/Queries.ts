@@ -1,5 +1,4 @@
-import { Experience } from "@/types/experience-type";
-import { Skill } from "@/types/skill-type";
+import { Experience, Skill } from "@/types";
 import moment from "moment";
 import { createClient } from "next-sanity";
 
