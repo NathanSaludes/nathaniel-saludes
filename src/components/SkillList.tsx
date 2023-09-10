@@ -1,33 +1,21 @@
-"use client"
 import { client } from "@/utils/Sanity"
 import { TSkill } from "@/utils/types"
-import { useCallback, useEffect, useState } from "react"
 import Pill from "./Pill"
 
-const SkillList: React.FC = () => {
-  const [skills, setSkills] = useState<TSkill[]>([])
-  const [loading, setLoading] = useState<boolean>(true)
+async function fetchSkills() {
+  const skills = await client.fetch<TSkill[]>(`*[_type == "skills"] | order(_createdAt asc)`, undefined, {
+    cache: "force-cache",
+  })
+  return skills
+}
 
-  const fetchSkills = useCallback(async () => {
-    const skills = await client.fetch<TSkill[]>(`*[_type == "skills"]`)
-    setSkills(skills)
-    setLoading(false)
-  }, [])
-
-  useEffect(() => {
-    fetchSkills()
-  }, [fetchSkills])
+const SkillList: React.FC = async () => {
+  const skills = await fetchSkills()
 
   return (
-    <>
-      {loading ? (
-        <div>Loading...</div>
-      ) : (
-        <div className="flex flex-wrap gap-1 gap-y-2">
-          {skills.length > 0 && skills.map((skill) => <Pill key={skill._id}>{skill.title}</Pill>)}
-        </div>
-      )}
-    </>
+    <div className="flex flex-wrap gap-1 gap-y-2">
+      {skills.length > 0 && skills.map((skill) => <Pill key={skill._id}>{skill.title}</Pill>)}
+    </div>
   )
 }
 
