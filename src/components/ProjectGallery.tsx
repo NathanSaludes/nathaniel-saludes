@@ -1,6 +1,4 @@
-interface Props {}
-
-const ProjectGallery: React.FC<Props> = () => {
+const ProjectGallery = () => {
   return (
     <div className="grid grid-cols-3 gap-[10px]">
       {Array.from({ length: 9 }).map((_, i) => (

@@ -9,7 +9,7 @@ async function fetchSkills() {
   return skills
 }
 
-const SkillList: React.FC = async () => {
+const SkillList = async () => {
   const skills = await fetchSkills()
 
   return (

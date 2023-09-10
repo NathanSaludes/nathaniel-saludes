@@ -1,6 +1,6 @@
 type NavLinkProps = React.AnchorHTMLAttributes<HTMLAnchorElement>
 
-const NavLink: React.FC<NavLinkProps> = ({ children, ...props }) => {
+const NavLink = ({ children, ...props }: NavLinkProps) => {
   return (
     <a className="hover:text-[rgba(0,0,0,100%)]" {...props}>
       {children}

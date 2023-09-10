@@ -1,7 +1,6 @@
 import { client } from "@/utils/Sanity"
 import { TExperience as ExperienceType, TExperience } from "@/utils/types"
 import moment from "moment"
-import { PropsWithChildren } from "react"
 import Experience from "./Experience"
 
 async function fetchExperience(): Promise<TExperience[]> {
@@ -26,7 +25,7 @@ async function fetchExperience(): Promise<TExperience[]> {
   return experience
 }
 
-const ExperienceList: React.FC<PropsWithChildren> = async () => {
+const ExperienceList = async () => {
   const experience = await fetchExperience()
 
   return (

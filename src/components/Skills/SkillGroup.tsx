@@ -7,7 +7,7 @@ interface SkillGroupProps {
   title: string
   group: "frontend" | "backend" | "tool" | "design" | "misc"
 }
-const SkillGroup: React.FC<SkillGroupProps> = ({ skills, group, title }) => {
+const SkillGroup = ({ skills, group, title }: SkillGroupProps) => {
   return (
     <div className="rounded-lg p-3 outline-1 outline-[rgba(0,0,0,0.03)] hover:cursor-pointer hover:bg-white hover:shadow-md hover:shadow-[rgba(0,0,0,0.05)] hover:outline">
       <p className="mb-2 font-semibold leading-none text-black/30">{title}</p>

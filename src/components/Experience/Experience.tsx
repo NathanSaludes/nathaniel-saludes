@@ -9,7 +9,7 @@ import { skillStyles } from "@/utils/types/constants"
 interface Props extends TExperience {
   key?: React.Key
 }
-const Experience: React.FC<Props> = (jobDetails) => {
+const Experience = (jobDetails: Props) => {
   const startDate = moment(jobDetails.start_date)
   const lastDate = moment(jobDetails.end_date)
   const tenureInMonths = lastDate.diff(startDate, "months")

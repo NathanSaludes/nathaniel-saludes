@@ -2,7 +2,7 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
   headingTitle?: string
 }
 
-const Section: React.FC<Props> = ({ headingTitle, children, ...props }) => {
+const Section = ({ headingTitle, children, ...props }: Props) => {
   return (
     <section {...props}>
       {headingTitle && (

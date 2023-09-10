@@ -3,7 +3,7 @@ import { FacebookIcon, GithubIcon, LinkedInIcon } from "./icons"
 interface SocialLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   icon: React.ReactNode
 }
-const SocialLink: React.FC<SocialLinkProps> = ({ icon, target = "_blank", ...props }) => (
+const SocialLink = ({ icon, target = "_blank", ...props }: SocialLinkProps) => (
   <a {...props} target={target}>
     {icon}
   </a>

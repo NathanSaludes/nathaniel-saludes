@@ -1,7 +1,7 @@
 import Nav from "./Nav"
 import SocialLinks from "./SocialLinks"
 
-const Header: React.FC = () => {
+const Header = () => {
   return (
     <div className="sticky top-0 flex max-h-screen min-w-[300px] basis-[400px] flex-col gap-10 overflow-y-auto py-20">
       {/* my details */}
