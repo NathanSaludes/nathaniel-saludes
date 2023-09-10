@@ -24,6 +24,7 @@ export default async function Home() {
       <div className="container relative mx-auto flex max-w-[1188px] gap-[116px] px-10">
         <Header />
         <main className="scroll-container flex min-h-[3000px] flex-col gap-[60px] py-20">
+          {/* About me */}
           <Section id="about_me">
             <div className="flex flex-col gap-6">
               <div className="intro">
@@ -42,30 +43,42 @@ export default async function Home() {
               <DownloadButton />
             </div>
           </Section>
+
+          {/* Skills */}
           <Section headingTitle="Skills" id="skills">
             <Skills data={skills} />
           </Section>
+
+          {/* Work Experience */}
           <Section headingTitle="Experience" id="experience">
             <Experience data={experienceData} />
           </Section>
+
+          {/* Projects */}
           <Section headingTitle="Projects" id="projects">
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque error architecto quisquam illo expedita
               doloribus at, similique possimus ratione nesciunt.
             </p>
           </Section>
+
+          {/* Achievements */}
           <Section headingTitle="Achievements" id="achievements">
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque error architecto quisquam illo expedita
               doloribus at, similique possimus ratione nesciunt.
             </p>
           </Section>
+
+          {/* Education */}
           <Section headingTitle="Education" id="education">
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque error architecto quisquam illo expedita
               doloribus at, similique possimus ratione nesciunt.
             </p>
           </Section>
+
+          {/* Contact */}
           <Section headingTitle="Contact" id="contact">
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque error architecto quisquam illo expedita
