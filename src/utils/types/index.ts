@@ -2,7 +2,7 @@ import { PortableTextBlock } from "sanity"
 
 /* Experience
 ------------------------------------------*/
-export type Experience = {
+export type TExperience = {
   _id: string
 	_createdAt: Date
   company_link: string
@@ -10,14 +10,14 @@ export type Experience = {
   company: string
   start_date: string
   end_date?: string
-  skills: Reference[]
+  skills: TSkill[]
   job_description: PortableTextBlock[]
-  company_logo?: Logo
+  company_logo?: TLogo
 }
 
 /* Logo
 ------------------------------------------*/
-export type Logo = {
+export type TLogo = {
   _type: string,
   asset: {
     url: string
@@ -26,7 +26,7 @@ export type Logo = {
 
 /* Reference
 ------------------------------------------*/
-export type Reference = { 
+export type TReference = { 
 	_key: string, 
 	_ref: string, 
 	_type: string 
@@ -35,7 +35,7 @@ export type Reference = {
 
 /* Skill
 ------------------------------------------*/
-export type Skill = {
+export type TSkill = {
 	title: string,
   _updatedAt: string,
   _createdAt: string,
