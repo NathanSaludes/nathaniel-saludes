@@ -30,7 +30,7 @@ const ExperienceList: React.FC<PropsWithChildren> = async () => {
   const experience = await fetchExperience()
 
   return (
-    <ul className="flex flex-col gap-y-[10px]">
+    <ul className="flex flex-col">
       {experience.map((exp) => {
         return (
           <li key={exp._id}>

@@ -15,7 +15,7 @@ const Experience: React.FC<Props> = (jobDetails) => {
   const tenureInYears = Math.floor(tenureInMonths / 12)
 
   return (
-    <div className="experience-block">
+    <div className="experience-block rounded-lg px-4 py-4 outline-1 outline-[rgba(0,0,0,0.03)] duration-300 ease-in-out hover:cursor-pointer hover:bg-white hover:shadow-md hover:shadow-[rgba(0,0,0,0.05)] hover:outline">
       <div className="grid grid-cols-[122px,1fr] gap-x-[30px]">
         {/* Tenure Column */}
         <div className="pt-1 text-right text-xs font-semibold text-[#B6B6B6]">
