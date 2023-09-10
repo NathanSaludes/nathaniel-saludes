@@ -53,6 +53,18 @@ const experience = {
 			options: {
 				sortable: "true"
 			}
+		},
+		{
+			name: "company_logo",
+      title: "Logo",
+			type: "image",
+			fields: [
+				{
+					name: 'alt',
+					type: 'string',
+					title: 'Alt Text',
+				}
+			]
 		}
 	]
 }
