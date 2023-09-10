@@ -4,6 +4,7 @@ import moment from "moment"
 import Image from "next/image"
 import React from "react"
 import Pill from "../Pill"
+import { skillStyles } from "@/utils/types/constants"
 
 interface Props extends TExperience {
   key?: React.Key
@@ -69,7 +70,16 @@ const Experience: React.FC<Props> = (jobDetails) => {
           </div>
           {/* Skills Used */}
           <div className="flex flex-wrap gap-1 gap-y-2">
-            {jobDetails.skills && jobDetails.skills.map(({ _id, title }) => <Pill key={_id}>{title}</Pill>)}
+            {jobDetails.skills &&
+              jobDetails.skills.map(({ _id, title, category }) => (
+                <Pill
+                  foregroundColor={skillStyles[category].foreground}
+                  backgroundColor={skillStyles[category].background}
+                  key={_id}
+                >
+                  {title}
+                </Pill>
+              ))}
           </div>
           {/* Company Logo */}
           <div className="">
