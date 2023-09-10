@@ -15,8 +15,28 @@ const config: Config = {
       },
       colors: {
         accent: {
-          foreground: 'var(--accent-foreground)',
-          background: 'var(--accent-background)'
+          background: 'var(--accent-background)',
+          foreground: 'var(--accent-foreground)'
+        },
+        frontend: {
+          background: 'var(--frontend-background)',
+          foreground: 'var(--frontend-foreground)'
+        },
+        backend: {
+          background: 'var(--backend-background)',
+          foreground: 'var(--backend-foreground)'
+        },
+        tool: {
+          background: 'var(--tool-background)',
+          foreground: 'var(--tool-foreground)'
+        },
+        design: {
+          background: 'var(--design-background)',
+          foreground: 'var(--design-foreground)'
+        },
+        misc: {
+          background: 'var(--misc-background)',
+          foreground: 'var(--misc-foreground)'
         }
       }
     },
