@@ -48,26 +48,17 @@ export default async function Home() {
 
           {/* Achievements */}
           <Section headingTitle="Achievements" id="achievements">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque error architecto quisquam illo expedita
-              doloribus at, similique possimus ratione nesciunt.
-            </p>
+            <p className="text-gray-300">Coming Soon...</p>
           </Section>
 
           {/* Education */}
           <Section headingTitle="Education" id="education">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque error architecto quisquam illo expedita
-              doloribus at, similique possimus ratione nesciunt.
-            </p>
+            <p className="text-gray-300">Coming Soon...</p>
           </Section>
 
           {/* Contact */}
           <Section headingTitle="Contact" id="contact">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque error architecto quisquam illo expedita
-              doloribus at, similique possimus ratione nesciunt.
-            </p>
+            <p className="text-gray-300">Coming Soon...</p>
           </Section>
         </main>
       </div>
