@@ -1,6 +1,7 @@
 import DownloadButton from "@/components/DownloadButton"
 import ExperienceList from "@/components/Experience/ExperienceList"
 import Header from "@/components/Header"
+import ProjectGallery from "@/components/ProjectGallery"
 import Section from "@/components/Section"
 import SkillList from "@/components/SkillList"
 
@@ -42,10 +43,7 @@ export default async function Home() {
 
           {/* Projects */}
           <Section headingTitle="Projects" id="projects">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque error architecto quisquam illo expedita
-              doloribus at, similique possimus ratione nesciunt.
-            </p>
+            <ProjectGallery />
           </Section>
 
           {/* Achievements */}
