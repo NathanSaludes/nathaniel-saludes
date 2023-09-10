@@ -3,7 +3,7 @@ import ExperienceList from "@/components/Experience/ExperienceList"
 import Header from "@/components/Header"
 import ProjectGallery from "@/components/ProjectGallery"
 import Section from "@/components/Section"
-import SkillList from "@/components/SkillList"
+import SkillList from "@/components/Skills/SkillList"
 
 export default async function Home() {
   return (
