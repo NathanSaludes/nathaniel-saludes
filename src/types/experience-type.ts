@@ -1,5 +1,6 @@
 import { PortableTextBlock } from "sanity"
 import { Reference } from "./reference-type"
+import { Logo } from "./logo-type"
 
 export type Experience = {
   _id: string
@@ -11,4 +12,5 @@ export type Experience = {
   end_date?: string
   skills: Reference[]
   job_description: PortableTextBlock[]
+  company_logo?: Logo
 }
