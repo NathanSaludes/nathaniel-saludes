@@ -1,11 +1,8 @@
 import DownloadButton from "@/components/DownloadButton"
-import Experience from "@/components/Experience"
+import ExperienceList from "@/components/Experience/ExperienceList"
 import Header from "@/components/Header"
 import Section from "@/components/Section"
-import Skills from "@/components/Skills"
-import { Skill } from "@/types/skill-type"
-import { createClient } from "next-sanity"
-// import experienceData from "@/testdata.json"
+import SkillList from "@/components/SkillList"
 
 export default async function Home() {
   return (
@@ -35,12 +32,12 @@ export default async function Home() {
 
           {/* Skills */}
           <Section headingTitle="Skills" id="skills">
-            <Skills data={skills} />
+            <SkillList />
           </Section>
 
           {/* Work Experience */}
           <Section headingTitle="Experience" id="experience">
-            <Experience data={experienceData} />
+            <ExperienceList />
           </Section>
 
           {/* Projects */}
