@@ -1,40 +1,25 @@
-"use client"
-import { Skill } from "@/types"
+import { TExperience } from "@/utils/types"
 import { PortableText } from "@portabletext/react"
 import moment from "moment"
 import Image from "next/image"
 import React from "react"
-import { PortableTextBlock } from "sanity"
 import Pill from "../Pill"
 
-export type JobDetails = {
-  startDate: string
-  lastDate?: string
-  jobTitle: string
-  jobDescription: PortableTextBlock[]
-  companyName: string
-  companyLink: string
-  companyLogoURL?: string
-  skillsUsed?: Skill[]
-}
-
-interface Props {
+interface Props extends TExperience {
   key?: React.Key
-  jobDetails: JobDetails
 }
-
-const Experience: React.FC<Props> = ({ jobDetails }) => {
-  const startDate = moment(jobDetails.startDate)
-  const lastDate = moment(jobDetails.lastDate)
+const Experience: React.FC<Props> = (jobDetails) => {
+  const startDate = moment(jobDetails.start_date)
+  const lastDate = moment(jobDetails.end_date)
   const tenureInMonths = lastDate.diff(startDate, "months")
   const tenureInYears = Math.floor(tenureInMonths / 12)
 
   return (
-    <>
+    <div className="experience-block">
       <div className="grid grid-cols-[122px,1fr] gap-x-[30px]">
         {/* Tenure Column */}
         <div className="pt-1 text-right text-xs font-semibold text-[#B6B6B6]">
-          <p>{`${startDate.format("YYYY MMM")} — ${jobDetails.lastDate ? lastDate.format("YYYY MMM") : "Present"}`}</p>
+          <p>{`${startDate.format("YYYY MMM")} — ${jobDetails.end_date ? lastDate.format("YYYY MMM") : "Present"}`}</p>
           <p>
             {tenureInYears > 0 ? (
               <span>
@@ -53,9 +38,9 @@ const Experience: React.FC<Props> = ({ jobDetails }) => {
           <div>
             {/* Job Title & Company Name */}
             <a href="#" className="text-base font-bold leading-[180%]">
-              <span>{jobDetails.jobTitle}</span>
-              <span className="text-[#EF9E00]"> — {jobDetails.companyName}</span>
-              {jobDetails.companyLink && (
+              <span>{jobDetails.job_title}</span>
+              <span className="text-[#EF9E00]"> — {jobDetails.company}</span>
+              {jobDetails.company_link && (
                 <svg
                   className="ml-1 inline-block"
                   width="14"
@@ -76,7 +61,7 @@ const Experience: React.FC<Props> = ({ jobDetails }) => {
               )}
             </a>
             <PortableText
-              value={jobDetails.jobDescription}
+              value={jobDetails.job_description}
               components={{
                 list: {
                   bullet: ({ children }) => (
@@ -88,17 +73,17 @@ const Experience: React.FC<Props> = ({ jobDetails }) => {
           </div>
           {/* Skills Used */}
           <div className="flex flex-wrap gap-1 gap-y-2">
-            {jobDetails.skillsUsed && jobDetails.skillsUsed.map(({ _id, title }) => <Pill key={_id}>{title}</Pill>)}
+            {jobDetails.skills && jobDetails.skills.map(({ _id, title }) => <Pill key={_id}>{title}</Pill>)}
           </div>
           {/* Company Logo */}
           <div className="">
-            {jobDetails.companyLogoURL && (
-              <Image src={jobDetails.companyLogoURL} alt={jobDetails.companyName} width={195.33} height={94} />
+            {jobDetails.company_logo && (
+              <Image src={jobDetails.company_logo.asset.url} alt={jobDetails.company} width={195.33} height={94} />
             )}
           </div>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 
