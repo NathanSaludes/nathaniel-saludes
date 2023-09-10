@@ -11,6 +11,21 @@
 
   --accent-background: #FFDD9B;
   --accent-foreground: #D98F00;
+
+  --frontend-background: #FFC2EE;
+  --frontend-foreground: #C878B1;
+
+  --backend-background: #D5CEFF;
+  --backend-foreground: #8677E1;
+
+  --design-background: #FFDD9B;
+  --design-foreground: #D98F00;
+
+  --tool-background: #AAF0FF;
+  --tool-foreground: #56B0C3;
+
+  --misc-background: #B4FFB7;
+  --misc-foreground: #70B974;  
 }
 
 @media (prefers-color-scheme: dark) {
