@@ -8,17 +8,6 @@ import { createClient } from "next-sanity"
 // import experienceData from "@/testdata.json"
 
 export default async function Home() {
-  const client = createClient({
-    projectId: "1avgl6w2",
-    dataset: "production",
-    useCdn: false,
-    apiVersion: "2023-09-09",
-  })
-
-  const experienceData = await client.fetch(`*[_type == "experience"]`)
-  const skillsData = await client.fetch<Skill[]>(`*[_type == "skills"]`)
-  const skills = skillsData.map((skill) => skill.title)
-
   return (
     <div className="antialiased">
       <div className="container relative mx-auto flex max-w-[1188px] gap-[116px] px-10">
