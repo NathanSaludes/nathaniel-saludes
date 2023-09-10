@@ -12,7 +12,7 @@ const ProjectGallery: React.FC<Props> = () => {
 
 const Project: React.FC = () => {
   return (
-    <div className="flex h-[130px] items-center justify-center bg-gray-200 text-gray-400 outline-1">Coming soon...</div>
+    <div className="flex h-[130px] items-center justify-center bg-gray-100 text-gray-300 outline-1">Coming soon...</div>
   )
 }
 
