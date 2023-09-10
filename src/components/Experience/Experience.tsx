@@ -22,13 +22,9 @@ const Experience: React.FC<Props> = (jobDetails) => {
           <p>{`${startDate.format("YYYY MMM")} — ${jobDetails.end_date ? lastDate.format("YYYY MMM") : "Present"}`}</p>
           <p>
             {tenureInYears > 0 ? (
-              <span>
-                {tenureInYears} {tenureInYears > 1 ? "Years" : "Year"}
-              </span>
+              <span>{`(${tenureInYears} ${tenureInYears > 1 ? "Years" : "Year"})`}</span>
             ) : (
-              <span>
-                {tenureInMonths} {tenureInMonths > 1 ? "Months" : "Month"}
-              </span>
+              <span>{`(${tenureInMonths} ${tenureInMonths > 1 ? "Months" : "Month"})`}</span>
             )}
           </p>
         </div>
