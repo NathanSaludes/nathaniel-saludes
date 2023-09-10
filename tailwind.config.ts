@@ -42,5 +42,10 @@ const config: Config = {
     },
   },
   plugins: [],
+  safelist: [
+    {
+      pattern: /(bg|text)-(frontend|backend|tool|design|misc)/,
+    },
+  ],
 }
 export default config
