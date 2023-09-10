@@ -33,7 +33,7 @@ const Experience: React.FC<Props> = ({ jobDetails }) => {
     <>
       <div className="grid grid-cols-[122px,1fr] gap-x-[30px]">
         {/* Tenure Column */}
-        <div className="text-right text-xs font-semibold text-[#B6B6B6]">
+        <div className="pt-1 text-right text-xs font-semibold text-[#B6B6B6]">
           <p>{`${startDate.format("YYYY MMM")} — ${jobDetails.lastDate ? lastDate.format("YYYY MMM") : "Present"}`}</p>
           <p>
             {tenureInYears > 0 ? (
