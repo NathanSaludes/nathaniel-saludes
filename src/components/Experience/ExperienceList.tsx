@@ -14,19 +14,21 @@ const ExperienceList: React.FC<Props> = async () => {
         experience.map((exp) => {
           const skillReferences = exp.skills.map(({ _ref }) => _ref)
           return (
-            <Experience
-              key={exp._id}
-              jobDetails={{
-                companyName: exp.company,
-                companyLink: exp.company_link,
-                jobTitle: exp.job_title,
-                jobDescription: exp.job_description,
-                startDate: exp.start_date,
-                lastDate: exp.end_date,
-                skillsUsed: skills.filter(({ _id }) => skillReferences.includes(_id)),
-                companyLogoURL: exp.company_logo?.asset.url,
-              }}
-            />
+            <li key={exp._id}>
+              <Experience
+                key={exp._id}
+                jobDetails={{
+                  companyName: exp.company,
+                  companyLink: exp.company_link,
+                  jobTitle: exp.job_title,
+                  jobDescription: exp.job_description,
+                  startDate: exp.start_date,
+                  lastDate: exp.end_date,
+                  skillsUsed: skills.filter(({ _id }) => skillReferences.includes(_id)),
+                  companyLogoURL: exp.company_logo?.asset.url,
+                }}
+              />
+            </li>
           )
         })}
     </ul>
