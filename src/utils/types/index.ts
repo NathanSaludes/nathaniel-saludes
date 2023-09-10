@@ -37,6 +37,7 @@ export type TReference = {
 ------------------------------------------*/
 export type TSkill = {
 	title: string,
+  category: "frontend" | "backend" | "tool" | "design" | "misc",
   _updatedAt: string,
   _createdAt: string,
   _rev: string,
