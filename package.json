@@ -18,7 +18,6 @@
     "boxicons": "^2.1.4",
     "clsx": "^2.0.0",
     "eslint": "8.48.0",
-    "eslint-config-next": "13.4.19",
     "moment": "^2.29.4",
     "next": "13.4.19",
     "next-sanity": "^5.4.6",
