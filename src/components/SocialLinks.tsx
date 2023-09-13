@@ -1,4 +1,4 @@
-import { FacebookIcon, GithubIcon, LinkedInIcon } from "./Icons"
+import { FacebookIcon, GithubIcon, LinkedInIcon } from "./icons"
 
 interface SocialLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   icon: React.ReactNode
