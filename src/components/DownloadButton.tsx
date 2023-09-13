@@ -1,4 +1,4 @@
-import { DownloadIcon } from "./icons"
+import { DownloadIcon } from "./Icons"
 
 const DownloadButton = () => {
   return (

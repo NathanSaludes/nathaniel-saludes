@@ -44,3 +44,16 @@ export type TSkill = {
   _type: string,
   _id: string
 }
+
+/* Project
+------------------------------------------*/
+export type TProject = {
+  _id: string,
+  title: string,
+  project_url: string,
+  thumbnail: {
+    asset: {
+      url: string
+    }
+  }
+}

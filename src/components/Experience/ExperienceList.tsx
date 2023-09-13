@@ -1,10 +1,10 @@
 import { client } from "@/utils/Sanity"
-import { TExperience as ExperienceType, TExperience } from "@/utils/types"
+import { TExperience } from "@/utils/types"
 import moment from "moment"
 import Experience from "./Experience"
 
 async function fetchExperience(): Promise<TExperience[]> {
-  const experience = await client.fetch<ExperienceType[]>(
+  const experience = await client.fetch<TExperience[]>(
     `*[_type == "experience"]{ 
       ...,
       skills[]->,

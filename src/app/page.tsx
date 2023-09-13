@@ -4,10 +4,15 @@ import Header from "@/components/Header"
 import ProjectGallery from "@/components/ProjectGallery"
 import Section from "@/components/Section"
 import SkillList from "@/components/Skills/SkillList"
+import { cn } from "@/utils"
+import { Plus_Jakarta_Sans } from "next/font/google"
+import { DetailedHTMLProps, HtmlHTMLAttributes } from "react"
 
-export default async function Home() {
+const plusJakartaSans = Plus_Jakarta_Sans({ subsets: ["latin"] })
+
+export default function Home(): DetailedHTMLProps<HtmlHTMLAttributes<HTMLBodyElement>, HTMLBodyElement> {
   return (
-    <div className="antialiased">
+    <body className={cn(plusJakartaSans.className, "antialiased")}>
       <div className="container relative mx-auto flex max-w-[1188px] gap-[116px] px-10">
         <Header />
         <main className="scroll-container flex min-h-[3000px] flex-col gap-[60px] py-20">
@@ -62,6 +67,6 @@ export default async function Home() {
           </Section>
         </main>
       </div>
-    </div>
+    </body>
   )
 }

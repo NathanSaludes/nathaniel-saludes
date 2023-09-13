@@ -14,6 +14,13 @@ const config: Config = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       colors: {
+        default: {
+          background: 'var(--default-background)',
+          foreground: 'var(--default-foreground)'
+        },
+        secondary: {
+          background: 'var(--secondary-background)'
+        },
         accent: {
           background: 'var(--accent-background)',
           foreground: 'var(--accent-foreground)'

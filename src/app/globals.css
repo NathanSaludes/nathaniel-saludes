@@ -3,14 +3,12 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --base-font: 14px;
 
-  --base-font-size: 15px;
+  --default-foreground: #000000;
+  --default-background: #FFFFFF;
 
-  --accent-background: #FFDD9B;
-  --accent-foreground: #D98F00;
+  --secondary-background: #D9D9D9;
 
   --frontend-background: #FFC2EE;
   --frontend-foreground: #C878B1;
@@ -28,10 +26,20 @@
   --misc-foreground: #70B974;  
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --default-foreground: #FFFFFF;
+    --default-background: #000000;
+
+    --secondary-background: #111111;
+  }
+}
+
+html {
+  font-size: var(--base-font);
+}
+
 body {
-  color: rgb(var(--foreground-rgb));
-  font-size: var(--base-font-size);
+  color: var(--foreground-rgb);
   line-height: 180%;
-  font-weight: 470;
-  letter-spacing: -0.2px;
 }
