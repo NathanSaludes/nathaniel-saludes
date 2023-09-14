@@ -5,13 +5,13 @@ import Link from "next/link"
 
 export async function fetchProjects(): Promise<TProject[]> {
   return await client.fetch<TProject[]>(
-    `*[_type == "projects"]{ 
+    `*[_type == "projects"]{
       ...,
       thumbnail {
         asset->{
           url
         }
-      } 
+      }
     }`,
     undefined,
     {
@@ -25,8 +25,14 @@ const ProjectGallery = async () => {
 
   return (
     <>
-      <div className="grid grid-cols-3 gap-1">
-        {projects && projects.map((props) => <Project key={props._id} {...props} />)}
+      <div className="group grid grid-cols-3 gap-1">
+        {projects &&
+          projects.map((props) => (
+            <Project
+              key={props._id}
+              {...props}
+            />
+          ))}
       </div>
       <div className="flex">
         <Link
@@ -46,7 +52,7 @@ const Project: React.FC<TProject> = ({ project_url, thumbnail, title }) => {
     <Link
       href={project_url}
       target="_blank"
-      className="flex items-stretch justify-stretch bg-gray-100 text-gray-300 hover:opacity-75"
+      className="flex items-stretch justify-stretch bg-gray-100 text-gray-300 transition-all duration-200 ease-in-out hover:opacity-75 group-hover:opacity-20 group-hover:hover:z-10 group-hover:hover:scale-105 group-hover:hover:opacity-100"
     >
       <Image
         className="w-full object-cover object-center"

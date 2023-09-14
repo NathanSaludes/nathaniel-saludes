@@ -6,17 +6,11 @@ export default async function ProjectGalleryPage() {
   const projects = await fetchProjects()
 
   return (
-    <div className="grid grid-cols-2 gap-1 md:grid-cols-3 lg:grid-cols-4">
+    <div className="group grid grid-cols-2 gap-1 md:grid-cols-3 lg:grid-cols-4">
       {projects &&
         projects.map(({ thumbnail, title, _id }) => (
           <ProjectGalleryItem key={_id}>
-            <Image
-              className="w-full object-cover object-center"
-              src={thumbnail.asset.url}
-              alt={title}
-              width={500}
-              height={500}
-            />
+            <Image className="w-full object-cover" src={thumbnail.asset.url} alt={title} width={500} height={500} />
           </ProjectGalleryItem>
         ))}
     </div>
