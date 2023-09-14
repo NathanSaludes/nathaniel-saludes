@@ -4,7 +4,7 @@ import { PortableTextBlock } from "sanity"
 ------------------------------------------*/
 export type TExperience = {
   _id: string
-	_createdAt: Date
+  _createdAt: Date
   company_link: string
   job_title: string
   company: string
@@ -18,7 +18,7 @@ export type TExperience = {
 /* Logo
 ------------------------------------------*/
 export type TLogo = {
-  _type: string,
+  _type: string
   asset: {
     url: string
   }
@@ -26,31 +26,30 @@ export type TLogo = {
 
 /* Reference
 ------------------------------------------*/
-export type TReference = { 
-	_key: string, 
-	_ref: string, 
-	_type: string 
+export type TReference = {
+  _key: string
+  _ref: string
+  _type: string
 }
-
 
 /* Skill
 ------------------------------------------*/
 export type TSkill = {
-	title: string,
-  category: "frontend" | "backend" | "tool" | "design" | "misc",
-  _updatedAt: string,
-  _createdAt: string,
-  _rev: string,
-  _type: string,
+  title: string
+  category: "frontend" | "backend" | "tool" | "design" | "misc"
+  _updatedAt: string
+  _createdAt: string
+  _rev: string
+  _type: string
   _id: string
 }
 
 /* Project
 ------------------------------------------*/
 export type TProject = {
-  _id: string,
-  title: string,
-  project_url: string,
+  _id: string
+  title: string
+  project_url: string
   thumbnail: {
     asset: {
       url: string
