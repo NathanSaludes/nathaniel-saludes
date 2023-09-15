@@ -12,10 +12,10 @@ const plusJakartaSans = Plus_Jakarta_Sans({ subsets: ["latin"] })
 
 export default function Home(): DetailedHTMLProps<HtmlHTMLAttributes<HTMLBodyElement>, HTMLBodyElement> {
   return (
-    <body className={cn(plusJakartaSans.className, "antialiased")}>
-      <div className="container relative mx-auto flex max-w-[1188px] gap-[116px] px-10">
+    <body className={cn(plusJakartaSans.className)}>
+      <div className="container relative mx-auto block gap-20 px-6 lg:flex xl:max-w-screen-xl xl:gap-[116px]">
         <Header />
-        <main className="scroll-container flex min-h-[3000px] flex-col gap-[60px] py-20">
+        <main className="flex min-h-[3000px] flex-col gap-[60px] lg:py-20">
           {/* About me */}
           <Section id="about_me">
             <div className="flex flex-col gap-6">

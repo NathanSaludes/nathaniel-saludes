@@ -3,27 +3,27 @@
 @tailwind utilities;
 
 :root {
-  --base-font: 14px;
+  --base-font: 15px;
 
   --default-foreground: #000000;
   --default-background: #FFFFFF;
 
   --secondary-background: #D9D9D9;
 
-  --frontend-background: #FFC2EE;
-  --frontend-foreground: #C878B1;
+  --frontend-background: #FFDD9B; 
+  --frontend-foreground: #D98F00; 
 
-  --backend-background: #D5CEFF;
-  --backend-foreground: #8677E1;
+  --backend-background: #B4FFB7;
+  --backend-foreground: #70B974;
 
-  --design-background: #FFDD9B;
-  --design-foreground: #D98F00;
+  --design-background: #FFC2EE;
+  --design-foreground: #C878B1;
 
   --tool-background: #AAF0FF;
   --tool-foreground: #56B0C3;
 
-  --misc-background: #B4FFB7;
-  --misc-foreground: #70B974;  
+  --misc-background: #D5CEFF;
+  --misc-foreground: #8677E1;  
 }
 
 @media (prefers-color-scheme: dark) {

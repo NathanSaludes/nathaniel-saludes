@@ -11,14 +11,14 @@ const SocialLink = ({ icon, target = "_blank", ...props }: SocialLinkProps) => (
 
 const SocialLinks: React.FC = () => {
   return (
-    <ul className="flex flex-grow items-end gap-3">
-      <li>
+    <ul className="group flex max-w-max items-end gap-3">
+      <li className="rounded-md transition duration-100 ease-in-out group-hover:opacity-20 group-hover:hover:scale-110 group-hover:hover:opacity-100 group-hover:active:scale-90">
         <SocialLink href="https://www.linkedin.com/in/nathanielsaludes/" icon={<LinkedInIcon />} />
       </li>
-      <li>
+      <li className="rounded-md transition duration-100 ease-in-out group-hover:opacity-20 group-hover:hover:scale-110 group-hover:hover:opacity-100 group-hover:active:scale-90">
         <SocialLink href="https://github.com/NathanSaludes?tab=repositories" icon={<GithubIcon />} />
       </li>
-      <li>
+      <li className="rounded-md transition duration-100 ease-in-out group-hover:opacity-20 group-hover:hover:scale-110 group-hover:hover:opacity-100 group-hover:active:scale-90">
         <SocialLink href="https://www.facebook.com/saludesnathaniel/" icon={<FacebookIcon />} />
       </li>
     </ul>

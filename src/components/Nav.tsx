@@ -10,7 +10,7 @@ const NavLink = ({ children, ...props }: NavLinkProps) => {
 
 const Nav = () => {
   return (
-    <nav className="flex max-w-max flex-col gap-2 pl-[34px] font-semibold text-[rgba(0,0,0,40%)]">
+    <nav className="hidden max-w-max flex-grow flex-col gap-2 pl-[34px] font-semibold text-[rgba(0,0,0,40%)] lg:flex">
       <NavLink href="#skills">Skills</NavLink>
       <NavLink href="#experience">Experience</NavLink>
       <NavLink href="#projects">Projects</NavLink>

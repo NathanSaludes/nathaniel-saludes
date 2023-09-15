@@ -24,36 +24,15 @@ const ProjectGallery = async () => {
   const projects = await fetchProjects()
 
   return (
-    <>
-      <div className="group grid grid-cols-3 gap-1">
-        {projects &&
-          projects.map((props) => (
-            <Project
-              key={props._id}
-              {...props}
-            />
-          ))}
-      </div>
-      <div className="flex">
-        <Link
-          prefetch={true}
-          href="/projects"
-          className="flex-grow p-4 text-center leading-4 underline-offset-4 transition-all duration-100 hover:bg-slate-50"
-        >
-          See All
-        </Link>
-      </div>
-    </>
+    <Link prefetch href="/projects" className="group grid grid-cols-3 gap-1 hover:opacity-75">
+      {projects && projects.map((props) => <Project key={props._id} {...props} />)}
+    </Link>
   )
 }
 
-const Project: React.FC<TProject> = ({ project_url, thumbnail, title }) => {
+const Project: React.FC<TProject> = ({ thumbnail, title }) => {
   return (
-    <Link
-      href={project_url}
-      target="_blank"
-      className="flex items-stretch justify-stretch bg-gray-100 text-gray-300 transition-all duration-200 ease-in-out hover:opacity-75 group-hover:opacity-20 group-hover:hover:z-10 group-hover:hover:scale-105 group-hover:hover:opacity-100"
-    >
+    <div className="flex items-stretch justify-stretch bg-gray-100 text-gray-300">
       <Image
         className="w-full object-cover object-center"
         src={thumbnail.asset.url}
@@ -61,7 +40,7 @@ const Project: React.FC<TProject> = ({ project_url, thumbnail, title }) => {
         width={500}
         height={500}
       />
-    </Link>
+    </div>
   )
 }
 
