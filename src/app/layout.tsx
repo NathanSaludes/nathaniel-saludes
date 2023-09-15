@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Nathaniel Saludes",
   description: "I design / develop accessible websites with seamless user experience.",
   openGraph: {
-    images: "./opengraph-image.png",
+    images: "./opengraph-image.jpg",
   },
   icons: "./favicon.ico",
 }
