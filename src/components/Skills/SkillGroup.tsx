@@ -1,5 +1,5 @@
 import { TSkill } from "@/utils/types"
-import { skillStyles } from "@/utils/types/constants"
+import { skillStyles } from "@/utils/constants"
 import Pill from "../Pill"
 
 interface SkillGroupProps {

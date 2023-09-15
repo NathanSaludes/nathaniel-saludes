@@ -1,4 +1,5 @@
 import { PortableTextBlock } from "sanity"
+import { URL } from "url"
 
 /* Experience
 ------------------------------------------*/
@@ -12,12 +13,12 @@ export type TExperience = {
   end_date?: string
   skills: TSkill[]
   job_description: PortableTextBlock[]
-  company_logo?: TLogo
+  company_logo?: TImage
 }
 
 /* Logo
 ------------------------------------------*/
-export type TLogo = {
+export type TImage = {
   _type: string
   asset: {
     url: string
@@ -55,4 +56,17 @@ export type TProject = {
       url: string
     }
   }
+}
+
+/* Achievements
+------------------------------------------*/
+export type TAchievements = {
+  _type: string,
+  link: string,
+  thumbnail_preview: TImage
+  _updatedAt: string,
+  date_acquired: string,
+  _createdAt: string,
+  _id: string,
+  label: string
 }

@@ -1,10 +1,12 @@
+import Link from "next/link"
+
 type NavLinkProps = React.AnchorHTMLAttributes<HTMLAnchorElement>
 
-const NavLink = ({ children, ...props }: NavLinkProps) => {
+const NavLink = ({ href = "#", children, ...props }: NavLinkProps) => {
   return (
-    <a className="hover:text-[rgba(0,0,0,100%)]" {...props}>
+    <Link href={href} className="hover:text-[rgba(0,0,0,100%)]" {...props}>
       {children}
-    </a>
+    </Link>
   )
 }
 
@@ -14,7 +16,7 @@ const Nav = () => {
       <NavLink href="#skills">Skills</NavLink>
       <NavLink href="#experience">Experience</NavLink>
       <NavLink href="#projects">Projects</NavLink>
-      <NavLink href="#achievements">Achievements</NavLink>
+      <NavLink href="#certifications">Certifications</NavLink>
       <NavLink href="#education">Education</NavLink>
       <NavLink href="#contact">Contact</NavLink>
     </nav>

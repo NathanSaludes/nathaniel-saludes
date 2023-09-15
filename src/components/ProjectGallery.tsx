@@ -24,7 +24,10 @@ const ProjectGallery = async () => {
   const projects = await fetchProjects()
 
   return (
-    <Link prefetch href="/projects" className="group grid grid-cols-3 gap-1 hover:opacity-75">
+    <Link prefetch href="/projects" className="group relative grid grid-cols-3 gap-1 hover:opacity-75">
+      <div className="overlay absolute flex h-full w-full items-center justify-center bg-white/40 text-lg text-black/50 opacity-0 backdrop-blur-sm transition-all duration-200 ease-in-out group-hover:opacity-100">
+        View all projects
+      </div>
       {projects && projects.map((props) => <Project key={props._id} {...props} />)}
     </Link>
   )

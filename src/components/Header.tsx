@@ -3,7 +3,7 @@ import SocialLinks from "./SocialLinks"
 
 const Header = () => {
   return (
-    <header className="top-0 flex max-h-screen min-w-[300px] basis-[400px] flex-col gap-8 overflow-y-auto py-10 pt-20 lg:sticky lg:gap-10 lg:py-20">
+    <header className="flex basis-[400px] flex-col gap-8 overflow-y-auto pb-20 pt-20 lg:sticky lg:top-0 lg:max-h-screen lg:min-w-[300px] lg:gap-10 lg:py-20">
       {/* my details */}
       <div className="profile-details">
         <a href="#about_me" className="text-[64px] font-extrabold leading-[90%] tracking-tighter">

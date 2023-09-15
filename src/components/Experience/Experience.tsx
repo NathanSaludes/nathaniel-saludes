@@ -1,5 +1,5 @@
 import { TExperience } from "@/utils/types"
-import { skillStyles } from "@/utils/types/constants"
+import { skillStyles } from "@/utils/constants"
 import { PortableText } from "@portabletext/react"
 import moment from "moment"
 import Image from "next/image"
@@ -42,7 +42,7 @@ const Experience = ({
     <div className="experience-block rounded-lg p-4 outline-1 outline-[rgba(0,0,0,0.03)] duration-300 ease-in-out hover:cursor-pointer hover:bg-white hover:shadow-xl hover:shadow-[rgba(0,0,0,0.05)] hover:outline">
       <div className="block sm:grid sm:grid-cols-[122px,1fr] sm:gap-x-[30px]">
         {/* Tenure Column */}
-        <div className="flex gap-1 pb-2 pt-5 text-left text-xs font-semibold text-[#B6B6B6] sm:flex-col sm:p-0 sm:text-right">
+        <div className="flex gap-1 pb-2 pt-5 text-left text-xs font-semibold text-[#B6B6B6] sm:mt-1 sm:flex-col sm:p-0 sm:text-right">
           <span>{getTenure()}</span>
           <span>{getTenureLocalString()}</span>
         </div>
