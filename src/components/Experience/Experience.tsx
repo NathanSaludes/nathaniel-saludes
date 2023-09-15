@@ -51,13 +51,13 @@ const Experience = ({
           {/* Job Details */}
           <div>
             {/* Job Title & Company Name */}
-            <a href="#" className="text-md font-bold leading-[180%]">
+            <p className="text-md font-bold leading-[180%]">
               <span>{job_title} — </span>
               <Link href={company_link} target="_blank" className="text-[#ef9e00] hover:text-[#db9200] hover:underline">
                 {company}
               </Link>
               {company_link && <ExternalLinkIcon />}
-            </a>
+            </p>
             <PortableText
               value={job_description}
               components={{
