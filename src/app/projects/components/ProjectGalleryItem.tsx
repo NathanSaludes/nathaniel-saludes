@@ -2,7 +2,7 @@ import Link from "next/link"
 import { FC, ReactNode } from "react"
 
 interface Props {
-  key: number | string
+  key: React.Key
   children?: ReactNode
 }
 const ProjectGalleryItem: FC<Props> = ({ key, children }) => {
