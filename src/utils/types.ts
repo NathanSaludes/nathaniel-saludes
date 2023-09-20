@@ -1,4 +1,5 @@
 import { PortableTextBlock } from "sanity"
+import { socialIcons } from "./constants"
 
 /* Experience
 ------------------------------------------*/
@@ -60,12 +61,26 @@ export type TProject = {
 /* Achievements
 ------------------------------------------*/
 export type TAchievements = {
-  _type: string,
-  link: string,
+  _type: string
+  link: string
   thumbnail_preview: TImage
-  _updatedAt: string,
-  date_acquired: string,
-  _createdAt: string,
-  _id: string,
+  _updatedAt: string
+  date_acquired: string
+  _createdAt: string
+  _id: string
   label: string
+}
+
+export type TGeneral = {
+  first_name: string
+  last_name: string
+  intro: string
+  about_me: PortableTextBlock[]
+  social_links: TSocialLink[]
+}
+
+export type TSocialLink = {
+  site: string
+  site_link: string
+  icon: keyof typeof socialIcons
 }

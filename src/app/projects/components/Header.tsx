@@ -17,7 +17,7 @@ const BackButton = () => {
 
 const Header = () => {
   return (
-    <header className="sticky flex items-center justify-between px-4 py-[10px]">
+    <header className="sticky top-0 z-20 flex items-center justify-between bg-black px-4 py-[10px]">
       <div className="left-slot">
         <Link href="/" className="block rounded-md p-[10px] hover:bg-secondary-background">
           <BackButton />

@@ -1,22 +1,14 @@
-import { client } from "@/utils/Sanity"
-import { TSkill } from "@/utils/types"
+import { fetchSkills } from "@/utils/queries"
 import SkillGroup from "./SkillGroup"
-
-async function fetchSkills() {
-  const skills = await client.fetch<TSkill[]>(`*[_type == "skills"] | order(_createdAt asc) `, undefined, {
-    cache: "force-cache",
-  })
-
-  return skills.sort((a, b) => a.category.localeCompare(b.category))
-}
 
 const SkillList = async () => {
   const skills = await fetchSkills()
+  skills.sort((a, b) => a.category.localeCompare(b.category))
 
   return (
     <>
       {/* Skill Legend */}
-      <div className="legend mb-4 mt-4 flex flex-wrap gap-x-3 text-black/40">
+      <div className="legend mb-4 mt-4 flex flex-wrap gap-x-3 text-black/50">
         <span className="group/frontend inline-flex items-center gap-2 px-2 py-1 text-sm underline-offset-2">
           <div className="legend-color aspect-square h-3 rounded-full bg-frontend-background"></div>
           Frontend

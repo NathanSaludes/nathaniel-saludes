@@ -1,6 +1,6 @@
 import Image from "next/image"
 import ProjectGalleryItem from "./components/ProjectGalleryItem"
-import { fetchProjects } from "@/components/ProjectGallery"
+import { fetchProjects } from "@/utils/queries"
 
 export default async function ProjectGalleryPage() {
   const projects = await fetchProjects()

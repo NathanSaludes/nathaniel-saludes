@@ -1,5 +1,5 @@
 import { TSkill } from "@/utils/types"
-import { skillStyles } from "@/utils/constants"
+import { skillCategoryStyles } from "@/utils/constants"
 import Pill from "../Pill"
 
 interface SkillGroupProps {
@@ -14,8 +14,8 @@ const SkillGroup = ({ skills, group }: SkillGroupProps) => {
         .filter(({ category }) => category === group)
         .map(({ _id, title }) => (
           <Pill
-            foregroundColor={skillStyles[group].foreground}
-            backgroundColor={skillStyles[group].background}
+            foregroundColor={skillCategoryStyles[group].foreground}
+            backgroundColor={skillCategoryStyles[group].background}
             key={_id}
           >
             {title}
