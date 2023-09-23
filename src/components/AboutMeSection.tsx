@@ -3,11 +3,16 @@ import DownloadButton from "./DownloadButton"
 import { PortableText } from "@portabletext/react"
 
 const AboutMeSection = async () => {
-  const general = await fetchGeneral()
+  const { about_me } = await fetchGeneral()
+
+  if (!about_me) {
+    return "Unable to load about me section"
+  }
+
   return (
     <div className="flex flex-col gap-6">
       <div className="intro">
-        <PortableText value={general.about_me} />
+        <PortableText value={about_me} />
       </div>
       <DownloadButton />
     </div>

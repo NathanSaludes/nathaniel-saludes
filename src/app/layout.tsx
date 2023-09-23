@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import "./globals.css"
+import { GlobalContextProvider } from "@/utils/contexts/Providers"
 
 export const metadata: Metadata = {
   title: "Nathaniel Saludes",
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className="scroll-pt-24 scroll-smooth antialiased">
-      {children}
+      <GlobalContextProvider>{children}</GlobalContextProvider>
     </html>
   )
 }

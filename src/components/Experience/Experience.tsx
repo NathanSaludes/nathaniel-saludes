@@ -83,9 +83,7 @@ const Experience = ({
               ))}
           </div>
           {/* Company Logo */}
-          <div className="">
-            {company_logo && <Image src={company_logo.asset.url} alt={company} width={195.33} height={94} />}
-          </div>
+          {company_logo && <Image src={company_logo.asset.url} alt={company} width={195.33} height={94} />}
         </div>
       </div>
     </div>

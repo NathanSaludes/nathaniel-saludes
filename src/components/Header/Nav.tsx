@@ -1,10 +1,10 @@
 "use client"
-import { useCallback, useContext } from "react"
+import { useCallback, useContext, useEffect } from "react"
 import NavLink from "./NavLinks"
 import { ObserverContext } from "@/utils/contexts/ObserverContext"
 
 const Nav = () => {
-  const { currentSection } = useContext(ObserverContext)
+  const { currentSection, mountObserver } = useContext(ObserverContext)
 
   const sectionIsVisible = useCallback(
     (sectionId: string) => {
@@ -15,6 +15,10 @@ const Nav = () => {
     },
     [currentSection],
   )
+
+  useEffect(() => {
+    mountObserver()
+  }, [mountObserver])
 
   return (
     <nav className="hidden max-w-max flex-grow flex-col gap-2 pl-[34px] font-semibold text-[rgba(0,0,0,40%)] lg:flex">

@@ -9,19 +9,25 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
 const Section = ({ title, children, id, ...props }: Props) => {
   const ref = useRef(null)
 
-  const { registerToObserver, unsubscribeToObserver } = useContext(ObserverContext)
+  const { register, unsubscribe } = useContext(ObserverContext)
 
   useEffect(() => {
-    const current = ref.current
-    registerToObserver(current)
+    if (ref.current) {
+      const current = ref.current
 
-    return () => {
-      unsubscribeToObserver(current)
+      if (register) {
+        register(current)
+      }
+      return () => {
+        if (unsubscribe) {
+          unsubscribe(current)
+        }
+      }
     }
-  }, [ref, registerToObserver, unsubscribeToObserver])
+  }, [ref, register, unsubscribe])
 
   return (
-    <section {...props}>
+    <section {...props} id={id}>
       {title && (
         <h3
           ref={ref}
@@ -31,7 +37,7 @@ const Section = ({ title, children, id, ...props }: Props) => {
           {title}
         </h3>
       )}
-      <div className="section-content leading-[180%]">{children}</div>
+      {children}
     </section>
   )
 }

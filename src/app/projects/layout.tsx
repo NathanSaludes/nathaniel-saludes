@@ -1,7 +1,6 @@
-import { cn } from "@/utils"
-import Header from "./components/Header"
-import { Plus_Jakarta_Sans } from "next/font/google"
 import { Metadata } from "next"
+import { Plus_Jakarta_Sans } from "next/font/google"
+import Header from "./components/Header"
 
 const plusJakartaSans = Plus_Jakarta_Sans({ subsets: ["latin"] })
 
@@ -12,7 +11,7 @@ export const metadata: Metadata = {
 
 function ProjectsLayout({ children }: { children: React.ReactNode }) {
   return (
-    <body className={cn(plusJakartaSans.className, "bg-default-background text-default-foreground antialiased")}>
+    <body className={plusJakartaSans.className}>
       <Header />
       <main>{children}</main>
     </body>

@@ -1,10 +1,10 @@
-import { fetchGeneral } from "@/utils/queries"
-import Nav from "./Nav"
-import { SocialLink, SocialLinks } from "../SocialLinks"
 import { socialIcons } from "@/utils/constants"
+import { SocialLink, SocialLinks } from "../SocialLinks"
+import Nav from "./Nav"
+import { fetchGeneral } from "@/utils/queries"
 
 const Header = async () => {
-  const { first_name, last_name, intro, social_links } = await fetchGeneral()
+  const { first_name, intro, last_name, social_links } = await fetchGeneral()
 
   return (
     <header className="flex basis-[400px] flex-col gap-8 overflow-y-auto pb-20 pt-20 lg:sticky lg:top-0 lg:max-h-screen lg:min-w-[300px] lg:gap-10 lg:py-20">
@@ -19,11 +19,13 @@ const Header = async () => {
         <p>{intro}</p>
       </div>
       <Nav />
-      <SocialLinks>
-        {social_links.map(({ site_link, site, icon }) => {
-          return <SocialLink key={site} href={site_link} icon={socialIcons[icon]} />
-        })}
-      </SocialLinks>
+      {social_links ? (
+        <SocialLinks>
+          {social_links.map(({ site_link, site, icon }) => {
+            return <SocialLink key={site} href={site_link} icon={socialIcons[icon]} />
+          })}
+        </SocialLinks>
+      ) : null}
     </header>
   )
 }

@@ -1,7 +1,8 @@
-"use client"
-import { PropsWithChildren } from "react"
-import { LoadingContextProvider } from "./PageLoaderContext"
+import { ObserverContextProvider } from "./ObserverContext"
 
-export const GlobalContextProvider: React.FC<PropsWithChildren> = ({ children }) => {
-  return <LoadingContextProvider>{children}</LoadingContextProvider>
+type Props = {
+  children?: React.ReactNode
+}
+export const GlobalContextProvider = ({ children }: Props) => {
+  return <ObserverContextProvider>{children}</ObserverContextProvider>
 }

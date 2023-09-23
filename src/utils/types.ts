@@ -75,8 +75,8 @@ export type TGeneral = {
   first_name: string
   last_name: string
   intro: string
-  about_me: PortableTextBlock[]
-  social_links: TSocialLink[]
+  about_me: PortableTextBlock[] | null
+  social_links: TSocialLink[] | null
 }
 
 export type TSocialLink = {

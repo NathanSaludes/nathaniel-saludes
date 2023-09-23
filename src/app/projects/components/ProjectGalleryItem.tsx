@@ -2,15 +2,15 @@ import Link from "next/link"
 import { FC, ReactNode } from "react"
 
 interface Props {
-  key: React.Key
+  url: string
   children?: ReactNode
 }
-const ProjectGalleryItem: FC<Props> = ({ key, children }) => {
+const ProjectGalleryItem: FC<Props> = ({ children, url }) => {
   return (
     <Link
-      href="#"
-      key={key}
-      className="flex aspect-square bg-secondary-background transition-all duration-150 ease-in-out hover:opacity-75 group-hover:opacity-60 group-hover:hover:opacity-100"
+      href={url}
+      target="_blank"
+      className="flex aspect-square bg-secondary-background brightness-95 transition-all duration-150 ease-in-out hover:brightness-90"
     >
       {children}
     </Link>

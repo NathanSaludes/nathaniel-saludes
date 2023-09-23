@@ -1,22 +1,30 @@
 "use client"
-import { createContext, useCallback, useMemo, useState } from "react"
+import { createContext, useCallback, useRef, useState } from "react"
 
-export const ObserverContext = createContext({
-  registerToObserver: (ref: Element | null) => {
-    ref
-  },
-  unsubscribeToObserver: (ref: Element | null) => {
-    ref
-  },
+type ObserverFunc = (ref: Element) => void | undefined
+
+interface IObserverContext {
+  mountObserver: () => boolean
+  register?: ObserverFunc
+  unsubscribe?: ObserverFunc
+  currentSection: string
+}
+
+export const ObserverContext = createContext<IObserverContext>({
+  mountObserver: () => false,
   currentSection: "",
 })
 
 export const ObserverContextProvider = ({ children }: { children: React.ReactNode }) => {
   const [currentSection, setCurrentSection] = useState("")
 
-  const observer = useMemo(
-    () =>
-      new IntersectionObserver(
+  const observerRef = useRef<IntersectionObserver>()
+
+  const mountObserver = useCallback(() => {
+    console.log("mounting IntersectionObserver...")
+
+    if (!observerRef.current) {
+      observerRef.current = new IntersectionObserver(
         ([entry]) => {
           // debug
           // console.log(`${entry.target.id}: ${entry.intersectionRect.top}`)
@@ -28,31 +36,33 @@ export const ObserverContextProvider = ({ children }: { children: React.ReactNod
           rootMargin: "0px -200px -200px 0px", // trigger if element is visible within the viewport plus a 200px margin
           threshold: 0.5, // trigger if 50% of the element is visible within the (viewport + 200px margin) range
         },
-      ),
-    [],
-  )
+      )
 
-  const registerToObserver = useCallback(
-    (ref: Element | null) => {
-      if (ref) {
-        observer.observe(ref)
-      }
-    },
-    [observer],
-  )
+      return true
+    }
 
-  const unsubscribeToObserver = useCallback(
-    (ref: Element | null) => {
-      if (ref) {
-        observer.unobserve(ref)
-        setCurrentSection("")
-      }
-    },
-    [observer],
-  )
+    return false
+  }, [observerRef])
+
+  const registerToObserver = useCallback<ObserverFunc>((ref) => {
+    if (ref && observerRef.current) {
+      console.log(`registering: ${ref.id}`)
+      observerRef.current.observe(ref)
+    }
+  }, [])
+
+  const unsubscribeToObserver = useCallback<ObserverFunc>((ref) => {
+    if (ref && observerRef.current) {
+      console.log(`unobserving: ${ref.id}`)
+      observerRef.current.unobserve(ref)
+      setCurrentSection("")
+    }
+  }, [])
 
   return (
-    <ObserverContext.Provider value={{ registerToObserver, unsubscribeToObserver, currentSection }}>
+    <ObserverContext.Provider
+      value={{ mountObserver, register: registerToObserver, unsubscribe: unsubscribeToObserver, currentSection }}
+    >
       {children}
     </ObserverContext.Provider>
   )
