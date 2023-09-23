@@ -5,33 +5,50 @@
 :root {
   --base-font: 15px;
 
-  --default-foreground: #000000;
-  --default-background: #FFFFFF;
+  --default-foreground: #09090b;
+  --default-background: #fafafa;
+  --default-accent: hsla(0, 0%, 4%, 0.4);
 
-  --secondary-background: #D9D9D9;
+  --secondary-background: #d9d9d9;
 
-  --frontend-background: #FFDD9B; 
-  --frontend-foreground: #D98F00; 
+  --frontend-background: #ffdd9b;
+  --frontend-foreground: #d98f00;
 
-  --backend-background: #B4FFB7;
-  --backend-foreground: #70B974;
+  --backend-background: #b4ffb7;
+  --backend-foreground: #70b974;
 
-  --design-background: #FFC2EE;
-  --design-foreground: #C878B1;
+  --design-background: #ffc2ee;
+  --design-foreground: #c878b1;
 
-  --tool-background: #AAF0FF;
-  --tool-foreground: #56B0C3;
+  --tool-background: #aaf0ff;
+  --tool-foreground: #56b0c3;
 
-  --misc-background: #D5CEFF;
-  --misc-foreground: #8677E1;  
+  --misc-background: #d5ceff;
+  --misc-foreground: #8677e1;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --default-foreground: #FFFFFF;
-    --default-background: #000000;
+    --default-foreground: #b8b8b8;
+    --default-background: #09090b;
+    --default-accent: hsla(0, 0%, 98%, 0.2);
 
     --secondary-background: #111111;
+
+    --frontend-background: #3b2800;
+    --frontend-foreground: #d98f00;
+
+    --backend-background: #003501;
+    --backend-foreground: #539657;
+
+    --design-background: #4e0038;
+    --design-foreground: #c878b1;
+
+    --tool-background: #002e38;
+    --tool-foreground: #56b0c3;
+
+    --misc-background: #1c1546;
+    --misc-foreground: #8677e1;
   }
 }
 

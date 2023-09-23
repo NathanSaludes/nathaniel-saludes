@@ -8,7 +8,7 @@ const SkillList = async () => {
   return (
     <>
       {/* Skill Legend */}
-      <div className="legend mb-4 mt-4 flex flex-wrap gap-x-3 font-semibold text-black/30">
+      <div className="legend mb-4 mt-4 flex flex-wrap gap-x-3 font-normal text-black/60 dark:text-white/40">
         <span className="group/frontend inline-flex items-center gap-2 px-2 py-1 text-sm underline-offset-2">
           <div className="legend-color aspect-square h-3 rounded-full bg-frontend-background"></div>
           Frontend

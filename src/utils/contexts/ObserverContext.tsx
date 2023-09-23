@@ -21,8 +21,6 @@ export const ObserverContextProvider = ({ children }: { children: React.ReactNod
   const observerRef = useRef<IntersectionObserver>()
 
   const mountObserver = useCallback(() => {
-    console.log("mounting IntersectionObserver...")
-
     if (!observerRef.current) {
       observerRef.current = new IntersectionObserver(
         ([entry]) => {
@@ -46,14 +44,12 @@ export const ObserverContextProvider = ({ children }: { children: React.ReactNod
 
   const registerToObserver = useCallback<ObserverFunc>((ref) => {
     if (ref && observerRef.current) {
-      console.log(`registering: ${ref.id}`)
       observerRef.current.observe(ref)
     }
   }, [])
 
   const unsubscribeToObserver = useCallback<ObserverFunc>((ref) => {
     if (ref && observerRef.current) {
-      console.log(`unobserving: ${ref.id}`)
       observerRef.current.unobserve(ref)
       setCurrentSection("")
     }

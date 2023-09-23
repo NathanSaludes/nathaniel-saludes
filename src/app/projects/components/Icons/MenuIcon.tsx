@@ -1,7 +1,7 @@
 const MenuIcon = () => {
   return (
     <svg
-      className="group-hover:fill-default-foreground"
+      className="fill-default-foreground"
       width="16"
       height="12"
       viewBox="0 0 16 12"

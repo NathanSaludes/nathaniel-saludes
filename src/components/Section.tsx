@@ -32,7 +32,7 @@ const Section = ({ title, children, id, ...props }: Props) => {
         <h3
           ref={ref}
           id={id}
-          className="mb-3 border-b-[3px] text-2xl font-bold leading-normal tracking-tighter sm:text-[34px]"
+          className="mb-3 border-b-[3px] border-b-black/10 text-2xl font-bold leading-normal tracking-tighter dark:border-b-white/10 sm:text-[34px]"
         >
           {title}
         </h3>

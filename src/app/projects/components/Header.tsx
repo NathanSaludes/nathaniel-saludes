@@ -4,7 +4,7 @@ import MenuIcon from "./Icons/MenuIcon"
 const BackButton = () => {
   return (
     <svg
-      className="group-hover:fill-default-foreground"
+      className="fill-default-foreground"
       width="15"
       height="14"
       viewBox="0 0 15 14"
@@ -17,7 +17,7 @@ const BackButton = () => {
 
 const Header = () => {
   return (
-    <header className="sticky top-0 z-20 flex items-center justify-between bg-white/40 px-4 py-[10px] backdrop-blur-md">
+    <header className="sticky top-0 z-20 flex items-center justify-between bg-white/40 px-4 py-[10px] backdrop-blur-md dark:bg-default-background">
       <div className="left-slot">
         <Link href="/" className="group block rounded-md p-[10px] hover:bg-secondary-background">
           <BackButton />

@@ -9,7 +9,7 @@ export default async function ProjectGalleryPage() {
     <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
       {projects &&
         projects.map(({ thumbnail, title, _id, project_url }) => (
-          <ProjectGalleryItem key={_id} url={project_url}>
+          <ProjectGalleryItem key={_id} url={project_url} title={title}>
             <Image className="w-full object-cover" src={thumbnail.asset.url} alt={title} width={500} height={500} />
           </ProjectGalleryItem>
         ))}
