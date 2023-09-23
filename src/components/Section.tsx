@@ -27,7 +27,7 @@ const Section = ({ title, children, id, ...props }: Props) => {
   }, [ref, register, unsubscribe])
 
   return (
-    <section {...props} id={id}>
+    <section {...props}>
       {title && (
         <h3
           ref={ref}
