@@ -74,6 +74,8 @@ export type TAchievements = {
 export type TGeneral = {
   first_name: string
   last_name: string
+  email: string
+  mobile_number: string
   intro: string
   about_me: PortableTextBlock[] | null
   social_links: TSocialLink[] | null
