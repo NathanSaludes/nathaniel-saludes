@@ -1,6 +1,6 @@
 "use client"
-import { ObserverContext } from "@/utils/contexts/ObserverContext"
-import { useContext, useEffect, useRef } from "react"
+import { useObserver } from "@/utils/contexts/ObserverContext"
+import { useEffect, useRef } from "react"
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
   title?: string
@@ -9,7 +9,7 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
 const Section = ({ title, children, id, ...props }: Props) => {
   const ref = useRef(null)
 
-  const { register, unsubscribe } = useContext(ObserverContext)
+  const { register, unsubscribe } = useObserver()
 
   useEffect(() => {
     if (ref.current) {

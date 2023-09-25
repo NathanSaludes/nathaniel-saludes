@@ -1,10 +1,10 @@
 "use client"
-import { useCallback, useContext, useEffect } from "react"
+import { useObserver } from "@/utils/contexts/ObserverContext"
+import { useCallback, useEffect } from "react"
 import NavLink from "./NavLinks"
-import { ObserverContext } from "@/utils/contexts/ObserverContext"
 
 const Nav = () => {
-  const { currentSection, mountObserver } = useContext(ObserverContext)
+  const { mountObserver, currentSection } = useObserver()
 
   const sectionIsVisible = useCallback(
     (sectionId: string) => {

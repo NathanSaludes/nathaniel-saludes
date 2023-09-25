@@ -1,5 +1,5 @@
 "use client"
-import { createContext, useCallback, useRef, useState } from "react"
+import { createContext, useCallback, useContext, useRef, useState } from "react"
 
 type ObserverFunc = (ref: Element) => void | undefined
 
@@ -10,12 +10,14 @@ interface IObserverContext {
   currentSection: string
 }
 
+// initialize context
 export const ObserverContext = createContext<IObserverContext>({
   mountObserver: () => false,
   currentSection: "",
 })
 
-export const ObserverContextProvider = ({ children }: { children: React.ReactNode }) => {
+// create observer provider wrapper
+export const ObserverProvider = ({ children }: { children: React.ReactNode }) => {
   const [currentSection, setCurrentSection] = useState("")
 
   const observerRef = useRef<IntersectionObserver>()
@@ -24,8 +26,6 @@ export const ObserverContextProvider = ({ children }: { children: React.ReactNod
     if (!observerRef.current) {
       observerRef.current = new IntersectionObserver(
         ([entry]) => {
-          // debug
-          // console.log(`${entry.target.id}: ${entry.intersectionRect.top}`)
           if (entry.isIntersecting) {
             setCurrentSection(entry.target.id)
           }
@@ -62,4 +62,17 @@ export const ObserverContextProvider = ({ children }: { children: React.ReactNod
       {children}
     </ObserverContext.Provider>
   )
+}
+
+// create observer hook
+export const useObserver = () => {
+  const observerContext = useContext(ObserverContext)
+
+  if (!observerContext) {
+    throw new Error(
+      `'useObserver' hook should only be used in components that are wrapped inside the 'ObserverProvider'`,
+    )
+  }
+
+  return observerContext
 }
