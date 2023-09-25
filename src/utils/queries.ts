@@ -51,7 +51,22 @@ export const fetchSkills = createFetch<TSkill[]>(`*[_type == "skills"] | order(_
 })
 
 /* Featured Projects */
-export const fetchFeaturedProjects = createFetch<TProject[]>(``)
+export const fetchFeaturedProjects = createFetch<TProject[]>(
+  `*[_type == "projects"][0..8]{
+    ...,
+    thumbnail {
+      asset->{
+        url
+      }
+    }
+  } | order(_createdAt desc)`,
+  {
+    params: undefined,
+    requestOptions: {
+      cache: "no-store",
+    },
+  },
+)
 
 /* Projects */
 export const fetchProjects = createFetch<TProject[]>(

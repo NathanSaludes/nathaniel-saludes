@@ -1,9 +1,9 @@
+import { fetchFeaturedProjects } from "@/utils/queries"
 import Link from "next/link"
 import Project from "./Project"
-import { fetchProjects } from "@/utils/queries"
 
 const ProjectGallery = async () => {
-  const projects = await fetchProjects()
+  const projects = await fetchFeaturedProjects()
 
   return (
     <Link prefetch href="/projects" className="group relative grid grid-cols-2 gap-2 hover:opacity-75 sm:grid-cols-3">
