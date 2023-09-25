@@ -14,7 +14,7 @@ const Contact = () => {
         <span className="flex aspect-square w-6 items-center justify-center">
           <PhoneIcon />
         </span>
-        +63 976 042 4755
+        (+63) 976 042 4755
       </Link>
     </div>
   )
