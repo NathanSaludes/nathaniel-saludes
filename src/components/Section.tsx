@@ -15,13 +15,10 @@ const Section = ({ title, children, id, ...props }: Props) => {
     if (ref.current) {
       const current = ref.current
 
-      if (register) {
-        register(current)
-      }
+      register(current)
+
       return () => {
-        if (unsubscribe) {
-          unsubscribe(current)
-        }
+        unsubscribe(current)
       }
     }
   }, [ref, register, unsubscribe])

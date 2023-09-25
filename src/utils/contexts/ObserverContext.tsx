@@ -1,18 +1,20 @@
 "use client"
 import { createContext, useCallback, useContext, useRef, useState } from "react"
 
-type ObserverFunc = (ref: Element) => void | undefined
+type ObserverFunc = (ref: Element) => void
 
 interface IObserverContext {
   mountObserver: () => boolean
-  register?: ObserverFunc
-  unsubscribe?: ObserverFunc
+  register: ObserverFunc
+  unsubscribe: ObserverFunc
   currentSection: string
 }
 
 // initialize context
 export const ObserverContext = createContext<IObserverContext>({
   mountObserver: () => false,
+  register: () => {},
+  unsubscribe: () => {},
   currentSection: "",
 })
 
