@@ -62,7 +62,7 @@ export const fetchProjects = createFetch<TProject[]>(
         url
       }
     }
-  }`,
+  } | order(_createdAt desc)`,
   {
     params: undefined,
     requestOptions: {
