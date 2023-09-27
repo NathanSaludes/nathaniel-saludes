@@ -22,7 +22,12 @@ function createFetch<T>(queryString: string, options?: createFetchOptions): () =
 ------------------------------------------------------------------------ */
 
 /* General */
-export const fetchGeneral = createFetch<TGeneral>(`*[_type == "general"][0]`)
+export const fetchGeneral = createFetch<TGeneral>(`*[_type == "general"][0]`, {
+  params: undefined,
+  requestOptions: {
+    cache: "no-store",
+  },
+})
 
 /* Experience */
 export const fetchExperience = createFetch<TExperience[]>(

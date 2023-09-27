@@ -40,6 +40,11 @@ export const generalSchema = {
       of: [{ type: "block" }],
     },
     {
+      name: "resume_url",
+      type: "url",
+      title: "Resume Link",
+    },
+    {
       name: "social_links",
       type: "array",
       title: "Social Links",

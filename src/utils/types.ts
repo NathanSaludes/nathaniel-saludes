@@ -78,6 +78,7 @@ export type TGeneral = {
   mobile_number: string
   intro: string
   about_me: PortableTextBlock[] | null
+  resume_url: string
   social_links: TSocialLink[] | null
 }
 
