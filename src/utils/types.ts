@@ -80,6 +80,7 @@ export type TGeneral = {
   about_me: PortableTextBlock[] | null
   resume_url: string
   social_links: TSocialLink[] | null
+  job_title: string
 }
 
 export type TSocialLink = {

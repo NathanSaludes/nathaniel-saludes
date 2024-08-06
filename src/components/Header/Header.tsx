@@ -4,7 +4,7 @@ import Nav from "./Nav"
 import { fetchGeneral } from "@/utils/queries"
 
 const Header = async () => {
-  const { first_name, intro, last_name, social_links } = await fetchGeneral()
+  const { first_name, intro, last_name, social_links, job_title } = await fetchGeneral()
 
   return (
     <header className="flex basis-[400px] flex-col gap-8 overflow-y-auto pb-20 pt-20 lg:sticky lg:top-0 lg:max-h-screen lg:min-w-[300px] lg:gap-10 lg:py-20">
@@ -15,7 +15,7 @@ const Header = async () => {
           <br />
           {last_name}
         </a>
-        <h2 className="text-2xl leading-[250%] tracking-tight">Web Developer</h2>
+        <h2 className="text-2xl leading-[250%] tracking-tight">{job_title}</h2>
         <p>{intro}</p>
       </div>
       <Nav />
